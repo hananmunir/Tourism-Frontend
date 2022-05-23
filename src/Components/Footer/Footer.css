@@ -1,0 +1,134 @@
+.footer-section {
+  background-color: var(--black);
+  padding: 4rem;
+  color: #fff;
+}
+
+.footer-container {
+  padding: 3rem 0;
+}
+.footer-about,
+.footer-navigation,
+.footer-subs-letter {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-about-title,
+.footer-navigation-title,
+.footer-subs-letter-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.footer-about-description,
+.nav-link,
+.footer-subs-letter-description {
+  font-size: 1rem;
+  font-weight: 200;
+  color: var(--secondaryText);
+}
+
+.nav-links-container {
+  display: flex;
+  padding-right: 7rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navigation-link {
+  color: #eee !important;
+  margin-bottom: 0.8rem;
+  padding: 0;
+  list-style-type: none;
+}
+.footer-subs-letter-description {
+  width: 78%;
+}
+.footer-email {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-email-input {
+  padding: 0.35rem;
+  width: 60%;
+
+  background-color: transparent;
+  border: 0.5px solid var(--secondaryText);
+  color: var(--secondaryText);
+}
+
+.footer-email-input:focus {
+  outline: none;
+}
+.footer-email-button {
+  padding: 0.36rem 1rem;
+
+  background-color: var(--primaryText);
+  border: 1px solid var(--primaryText);
+  color: #eee;
+
+  transition: 0.6s all ease-out;
+}
+
+.footer-email-button:hover {
+  background-color: transparent;
+  color: var(--primaryText);
+  border: 1px solid var(--primaryText);
+}
+
+.footer-social-links {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  margin-top: 4rem;
+  justify-content: center;
+}
+
+.footer-social-icon {
+  font-size: 1rem;
+  margin: 0 1rem;
+  color: var(--secondaryText);
+  transition: 0.6s all ease-out;
+  cursor: pointer;
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.fb:hover {
+  color: #4267b2;
+}
+.insta:hover {
+  color: #fd1d1d;
+}
+.tw:hover {
+  color: #1da1f2;
+}
+
+.pint:hover {
+  color: #e60023;
+}
+
+@media screen and (max-width: 998px) {
+  .footer-navigation,
+  .footer-subs-letter {
+    margin-top: 1.5rem;
+  }
+  .nav-links-container {
+    padding-right: 8rem;
+  }
+  .footer-email-input {
+    width: 90%;
+  }
+}

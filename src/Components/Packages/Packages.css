@@ -1,0 +1,34 @@
+.packages-header {
+  position: relative;
+}
+.packages-header-img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+.packages-text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.packages-text {
+  text-align: center;
+  color: #fff;
+  font-size: 4rem;
+}
+
+.package-title-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.packages-title {
+  font-size: 3rem;
+
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}

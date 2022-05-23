@@ -1,0 +1,39 @@
+.custom-navbar {
+  background-color: var(--black);
+  color: #fff !important;
+}
+
+.nav-link-hover:hover {
+  color: var(--primaryText) !important;
+}
+.nav-link-hover {
+  color: #f1f1f1 !important;
+  transition: 0.3s ease-out;
+}
+
+.navbar-dark .navbar-nav .nav-link.disabled {
+  color: #f1f1f18e;
+}
+
+.navbar-btn {
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: 0.7s all ease-out;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.37rem 1.7rem;
+}
+
+.navbar-btn:hover {
+  background-color: var(--primaryText);
+  border: 1px solid var(--primaryText);
+}
+
+.own-nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.own-nav-link:hover {
+  color: var(--primaryText);
+}

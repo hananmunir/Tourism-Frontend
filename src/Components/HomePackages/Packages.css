@@ -1,0 +1,17 @@
+.packages-section {
+  margin-top: 3rem;
+}
+.package-header-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-direction: column;
+}
+.package-header-title {
+  font-size: 3rem;
+  font-weight: 300;
+}
+.package-header-description {
+  color: rgba(0, 0, 0, 0.5);
+}
