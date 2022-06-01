@@ -32,3 +32,21 @@
   font-weight: 300;
   margin-bottom: 1rem;
 }
+
+.page-item.active .page-link {
+  background-color: var(--primaryText) !important;
+  border-color: var(--primaryText) !important;
+  color: #fff !important;
+}
+.page-link:focus,
+.page-link {
+  color: var(--primaryText) !important;
+}
+.pagination-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}

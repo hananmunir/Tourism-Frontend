@@ -1,15 +1,16 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
+
 import Package from "./Package/Package";
 import "./Packages.css";
-import image1 from "../../Images/567d216a2af1c.jpg";
-import image3 from "../../Images/86d9afef-2819-4a3c-a368-7a3ed33e1fab_shutterstock_760589050.jpg";
-import image2 from "././../../Images/photo-1573843981267-be1999ff37cd.jpg";
-import image4 from "../../Images/04-dubai.jpg";
-import image5 from "../../Images/photo-1575025699516-4735ac10c265.jpg";
-import image6 from "../../Images/01-greece.jpg";
-import image7 from "../../Images/03-japan.jpg";
-import image8 from "../../Images/05-london.jpg";
+import image1 from "../../Images/567d216a2af1c.webp";
+import image3 from "../../Images/86d9afef-2819-4a3c-a368-7a3ed33e1fab_shutterstock_760589050.webp";
+import image2 from "././../../Images/photo-1573843981267-be1999ff37cd.webp";
+import image4 from "../../Images/04-dubai.webp";
+import image5 from "../../Images/photo-1575025699516-4735ac10c265.webp";
+import image6 from "../../Images/01-greece.webp";
+import image7 from "../../Images/03-japan.webp";
+import image8 from "../../Images/05-london.webp";
 
 function Packages() {
   return (
@@ -22,6 +23,7 @@ function Packages() {
       </div>
       <Container>
         <Row className='px-lg-5 mx-lg-5'>
+          
           <Package
             lg
             cost={300}
@@ -33,6 +35,7 @@ function Packages() {
             cost={120}
             image={image2}
             destination={"Resort, Maldives"}
+            data-aos='fade-left'
           />
           <Package
             cost={420}

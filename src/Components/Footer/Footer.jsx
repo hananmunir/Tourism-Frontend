@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaPinterestP,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className='footer-section'>
@@ -28,16 +29,32 @@ function Footer() {
               <span className='footer-navigation-title'>Navigation</span>
               <div className='nav-links-container'>
                 <ul className='navigation-links'>
-                  <li className='navigation-link'>Home</li>
-                  <li className='navigation-link'>Packages</li>
-                  <li className='navigation-link'>Services</li>
-                  <li className='navigation-link'>About</li>
+                  <li className='navigation-link'>
+                    <Link to='/' className = 'clickable-link'>Home</Link>
+                  </li>
+                  <li className='navigation-link'>
+                    <Link to='/packages' className = 'clickable-link'>Packages</Link>
+                  </li>
+                  <li className='navigation-link'>
+                    <Link to='#services' className = 'clickable-link'>Services</Link>
+                  </li>
+                  <li className='navigation-link'>
+                    <Link to='/about' className = 'clickable-link'>About</Link>
+                  </li>
                 </ul>
-                <ul className='navigation-links'>
-                  <li className='navigation-link'>About Us</li>
-                  <li className='navigation-link'>Privacy Policy</li>
-                  <li className='navigation-link'>Contact Us</li>
-                  <li className='navigation-link'>Discount</li>
+                <ul className='navigation-links right-navigation-links'>
+                  <li className='navigation-link'>
+                    <Link to='/about' className = 'clickable-link'>About Us</Link>
+                  </li>
+                  <li className='navigation-link'>
+                    <Link to='/' className = 'clickable-link'>Privacy Policy</Link>
+                  </li>
+                  <li className='navigation-link'>
+                    <Link to='/contact' className = 'clickable-link'>Contact Us</Link>
+                  </li>
+                  <li className='navigation-link'>
+                    <Link to='/' className = 'clickable-link'>Discount</Link>
+                  </li>
                 </ul>
               </div>
             </div>

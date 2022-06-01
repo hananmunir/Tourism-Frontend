@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import img from "../../Images/about-us.jpg";
+import img from "../../Images/about-us.webp";
 import { Container } from "react-bootstrap";
 function about() {
   return (

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy } from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Header.css";
-import Scene from "../EarthModel/Scene";
+const Scene = lazy(() => import("../EarthModel/Scene"));
+
 function Header() {
   return (
     <Container fluid className='header-section'>
@@ -15,15 +17,23 @@ function Header() {
               magni velit mollitia dolor illo rerum quos officiis eum alias
               maxime voluptate?
             </span>
-            <button className='header-btn'>Explore</button>
+            <button className='header-btn'>
+              <Link
+                to='/packages'
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                Explore
+              </Link>
+            </button>
           </div>
         </Col>
-        <Col className='p-0 m-0'>{/* <Scene /> */}</Col>
+        <Col className='p-0 m-0'>
+          {/* <Earth /> */}
+          <Scene />
+        </Col>
       </Row>
     </Container>
   );
 }
 
 export default Header;
-
-//4hbuPKCpLkTkYHAR

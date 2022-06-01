@@ -1,32 +1,52 @@
 import React from "react";
 import "./Package.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 import { Col } from "react-bootstrap";
-import img from "../../Images/photo-1575025699516-4735ac10c265.jpg";
 import { FaLocationArrow } from "react-icons/fa";
 import { BsCalendarEventFill } from "react-icons/bs";
+import { useEffect } from "react";
 
-const BASE_URL =
-  "https://assign2-express-backend.herokuapp.com/api/posts/images";
-function Package({ detail, tripPackage }) {
+const BASE_URL = "http://localhost:8800/api/packages/images";
+
+function Package({ details, tripPackage }) {
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+  });
+
+  const navigate = useNavigate();
+  const handleBooking = () => {
+    if (details) {
+      navigate(`/checkout/${tripPackage._id}`);
+    }
+  };
+  const handleClick = () => {
+    if (tripPackage._id && !details) {
+      navigate(`/package/${tripPackage._id}`);
+    }
+  };
   return (
     <Col
       xs={12}
-      md={detail ? 12 : 6}
-      lg={detail ? 12 : 4}
-      className={detail ? " " : "mt-3 col-mid-offset-3 p-3"}
+      md={details ? 12 : 6}
+      lg={details ? 12 : 4}
+      className={details ? " " : "mt-3 col-mid-offset-3 p-3"}
+      onClick={handleClick}
     >
       <div
-        style={detail ? { border: "none " } : null}
-        className={"trip-card" + (detail ? " " : " hover-class")}
+        data-aos={details ? null : "fade-right"}
+        style={details ? { border: "none " } : null}
+        className={"trip-card" + (details ? " " : " hover-class")}
       >
-        {detail ? null : <div className='trip-date'>12 Oct</div>}
+        {details ? null : <div className='trip-date'>12 Oct</div>}
 
         <div>
           <img
             className='trip-img'
             alt=' trip'
-            style={detail ? { height: "70vh " } : {}}
-            src={`${BASE_URL}/${tripPackage.image}`}
+            style={details ? { height: "70vh " } : {}}
+            src={tripPackage.image ? `${BASE_URL}/${tripPackage.image}` : null}
           />
         </div>
         <div className='trip-text'>
@@ -46,16 +66,18 @@ function Package({ detail, tripPackage }) {
           </div>
           <div className='trip-desc'>
             <span className='trip-title'> {tripPackage.title}</span>
-            <span className='trip-details'>
-              {detail
+            <span className='trip-detailss'>
+              {details
                 ? tripPackage.description
                 : `${tripPackage.description.substring(0, 100)}...`}
             </span>
           </div>
-          {detail ? (
-            <button className='booking-btn'>Book</button>
+          {details ? (
+            <button className='booking-btn' onClick={handleBooking}>
+              Book
+            </button>
           ) : (
-            <a href='' className='trip-more-info'>
+            <a href={`/packages/${tripPackage._id}`} className='trip-more-info'>
               READ MORE
             </a>
           )}

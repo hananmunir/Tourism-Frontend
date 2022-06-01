@@ -1,23 +1,28 @@
-import React, { lazy, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getPackages } from "../Actions/packages";
-const PackageDetail = lazy(() =>
-  import("../Components/PackageDetail/PackageDetail")
-);
+import React, { lazy, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { fetchPackage } from "../api/index";
+import Loader from "../layouts/loader/Loader";
+const PackageDetail = lazy(() => import("../Components/Package/Package"));
 export default function Package() {
-  const dispatch = useDispatch();
-
+  const params = useParams();
+  const [packageDetail, setPackageDetail] = useState({});
+  
   useEffect(() => {
-    const dispatchData = async () => {
-      await dispatch(getPackages());
+    const getPackage = async () => {
+      const data = await fetchPackage(params.id);
+      setPackageDetail(data.data);
     };
-    dispatchData();
-
-  }, [dispatch]);
+    getPackage();
+  }, [params.id]);
 
   return (
     <>
-      <PackageDetail />
+      {packageDetail ? (
+        <PackageDetail details tripPackage={packageDetail} />
+      ) : (
+        <Loader />
+      )}
     </>
   );
 }

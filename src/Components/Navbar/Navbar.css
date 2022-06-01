@@ -32,6 +32,8 @@
 .own-nav-link {
   text-decoration: none;
   color: #fff;
+  transition: 0.4s ease-out all;
+  margin: 0 0.29rem;
 }
 
 .own-nav-link:hover {
