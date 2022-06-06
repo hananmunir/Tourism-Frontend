@@ -13,14 +13,15 @@ const Packages = lazy(() => import("../Pages/Packages"));
 const Package = lazy(() => import("../Pages/Package"));
 const NotFound = lazy(() => import("../Components/Errors/404"));
 const Checkout = lazy(() => import("../Components/Checkout/Checkout"));
-
+const BookingConfirmation = lazy(() =>
+  import("../Components/BookingConfirmation/Confirmation")
+);
 const PageRoutes = [
   {
     path: "/",
     element: <FullLayout />,
     children: [
-      { path: "/", exact: true, element: <Navigate to='/home' /> },
-      { path: "/home", exact: true, element: <Home /> },
+      { path: "/", exact: true, element: <Home /> },
       { path: "/about", exact: true, element: <AboutUs /> },
       { path: "/contact", exact: true, element: <ContactUs /> },
       { path: "/testimonies", exact: true, element: <Testimonies /> },
@@ -30,6 +31,7 @@ const PageRoutes = [
     ],
   },
   { path: "/404", exact: true, element: <NotFound /> },
+  { path: "/confirmation", exact: true, element: <BookingConfirmation /> },
 ];
 
 export default PageRoutes;

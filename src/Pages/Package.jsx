@@ -1,21 +1,23 @@
 import React, { lazy, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { fetchPackage } from "../api/index";
 import Loader from "../layouts/loader/Loader";
 const PackageDetail = lazy(() => import("../Components/Package/Package"));
 export default function Package() {
   const params = useParams();
-  const [packageDetail, setPackageDetail] = useState({});
-  
+  const navigate = useNavigate();
+  const [packageDetail, setPackageDetail] = useState();
+
   useEffect(() => {
-    const getPackage = async () => {
-      const data = await fetchPackage(params.id);
-      setPackageDetail(data.data);
+    const getPackage = () => {
+      fetchPackage(params.id)
+        .then((res) => setPackageDetail(res.data))
+        .catch(() => navigate("/404"));
     };
     getPackage();
   }, [params.id]);
-
+  console.log(packageDetail);
   return (
     <>
       {packageDetail ? (

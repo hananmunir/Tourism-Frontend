@@ -10,7 +10,6 @@ export const signIn = (email, password) => async (dispatch) => {
 
     // dispatach the action
     dispatch({ type: SIGNIN, payload: data });
-    window.location.href = "/";
   } catch (error) {
     if (
       error?.response.status === 401 ||
@@ -42,7 +41,6 @@ export const signUp = (user, setSignup) => async (dispatch) => {
 // Logout Action
 export const logout = (navigate) => async (dispatch) => {
   try {
-
     // dispatach the action
     dispatch({ type: LOGOUT, payload: [] });
 

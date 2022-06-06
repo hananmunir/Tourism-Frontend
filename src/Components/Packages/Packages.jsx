@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Packages.css";
-import packagesHeader from "../../Images/packages-header.webp";
+
 import { Container, Row, Pagination } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Package from "../Package/Package";
@@ -45,7 +45,7 @@ function Packages() {
     <>
       <div className='packages-header'>
         <img
-          src={packagesHeader}
+          src='/static/packages-header.webp'
           alt='Landscape'
           className='packages-header-img'
         />
@@ -60,8 +60,8 @@ function Packages() {
         </div>
         {/* <Filter/> */}
         <Row>
-          {packages?.map((packageItem) => (
-            <Package key={packageItem._id} tripPackage={packageItem} />
+          {packages?.map((packageItem, index) => (
+            <Package key={index} tripPackage={packageItem} />
           ))}
         </Row>
       </Container>

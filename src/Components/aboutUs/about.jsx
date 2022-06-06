@@ -1,12 +1,16 @@
 import React from "react";
 import "./about.css";
-import img from "../../Images/about-us.webp";
+
 import { Container } from "react-bootstrap";
 function about() {
   return (
     <>
       <div className='about-container'>
-        <img src={img} className='about-img' alt='sun shine '></img>
+        <img
+          src='/static/about-us.webp'
+          className='about-img'
+          alt='sun shine '
+        ></img>
         <div className='about-title-container'>
           <span className='about-title'>About Us</span>
         </div>

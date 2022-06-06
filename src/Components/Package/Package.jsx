@@ -8,7 +8,9 @@ import { FaLocationArrow } from "react-icons/fa";
 import { BsCalendarEventFill } from "react-icons/bs";
 import { useEffect } from "react";
 
-const BASE_URL = "http://localhost:8800/api/packages/images";
+// const BASE_URL = "http://localhost:8800/api/packages/images";
+const BASE_URL =
+  "https://tourism-app-backend-node.herokuapp.com/api/packages/images";
 
 function Package({ details, tripPackage }) {
   useEffect(() => {

@@ -35,10 +35,6 @@
   margin-bottom: 4rem;
   transition: 0.5s ease-out;
 }
-.package-cost {
-  color: var(--primaryText);
-  font-weight: 400;
-}
 
 .package-destination {
   font-size: 1.3rem;

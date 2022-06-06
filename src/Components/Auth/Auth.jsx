@@ -17,7 +17,10 @@ const user = {
 const clickable = { cursor: "pointer", color: " blue" }; // for styling
 function Signup({ show, setShow, signup, setSignup }) {
   const dispatch = useDispatch(); // for dispatching actions
-  let error = useSelector((state) => state.Auth.error); // for getting error from redux store
+  let error = useSelector((state) => {
+    console.log("Setting Error", state.Auth.error);
+    return state.Auth.error;
+  }); // for getting error from redux store
   const [formData, setFormData] = useState(user); // for storing form data
   const [validated, setValidated] = useState(false); // for validating form
 
@@ -28,10 +31,10 @@ function Signup({ show, setShow, signup, setSignup }) {
     setFormData(user);
     // for clearing error
     dispatch({ type: ERROR, payload: "" });
-  }, [signup, show]);
+  }, [signup, show, dispatch]);
 
   // for handling form sibmit
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     // for validating form
@@ -40,25 +43,26 @@ function Signup({ show, setShow, signup, setSignup }) {
       event.preventDefault();
       event.stopPropagation();
     }
-    setValidated(true);
 
-    // for checking password and confirm password
-    if (formData.password !== formData.confirmPassword) {
-      dispatch({
-        type: ERROR,
-        payload: "Password and Confirm Password does not match",
-      });
-      return;
-    }
+    setValidated(true);
 
     if (validated) {
       if (signup) {
+        // for checking password and confirm password
+        if (formData.password !== formData.confirmPassword) {
+          dispatch({
+            type: ERROR,
+            payload: "Password and Confirm Password does not match",
+          });
+          return;
+        }
         // for dispatching signup action
         dispatch(signUp(formData, setSignup));
       } else {
         // for dispatching signin action
         dispatch(signIn(formData.email, formData.password));
       }
+      setValidated(false);
     }
   };
 
@@ -198,7 +202,10 @@ function Signup({ show, setShow, signup, setSignup }) {
           <Row className='mt-4'>
             <span>
               For Admin login{" "}
-              <a href='#' style={{ textDecoration: "none", color: "blue" }}>
+              <a
+                href='https://tothestars-admin-panel.netlify.app/signin'
+                style={{ textDecoration: "none", color: "blue" }}
+              >
                 Click Here
               </a>
             </span>

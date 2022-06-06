@@ -2,7 +2,8 @@ import axios from "axios";
 
 // create an axios instance
 const API = axios.create({
-  baseURL: "http://localhost:8800/api/",
+  // baseURL: "http://localhost:8800/api/",
+  baseURL: "https://tourism-app-backend-node.herokuapp.com/api",
 });
 
 // request interceptor

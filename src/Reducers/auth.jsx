@@ -13,6 +13,7 @@ const reducer = (state = initialState, action) => {
         "TourismAuthData",
         JSON.stringify(action?.payload.user)
       ); // for storing user data in local storage
+      window.location.reload(); // for reloading page
       return { ...state, user: action?.payload.user };
     case LOGOUT:
       localStorage.removeItem("TourismSecurityToken"); // for removing token from local storage

@@ -7,7 +7,7 @@ import "./Package.css";
 function Package({ lg, cost, image, destination }) {
   return (
     <Col className='mt-3' sm={12} md={6} lg={lg ? 6 : 4}>
-        <Link to='/packages'>
+      <Link to='/packages'>
         <div
           data-aos={lg ? "fade-down" : "fade-up"}
           className='package-container'
@@ -15,12 +15,11 @@ function Package({ lg, cost, image, destination }) {
           <img src={image} alt='Package' className='package-img' />
           <div className='overlay'></div>
           <div className='package-text'>
-            <span className='package-cost'>${cost}</span>
             <span className='package-destination'>{destination}</span>
           </div>
         </div>
-    </Link>
-      </Col>
+      </Link>
+    </Col>
   );
 }
 

@@ -15,7 +15,7 @@ function Footer() {
         <Row className='footer-container'>
           <Col lg>
             <div className='footer-about'>
-              <span className='footer-about-title'>About Travelors</span>
+              <span className='footer-about-title'>About TotheStars</span>
               <span className='footer-about-description'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
                 dolorem magnam nam architecto quod aliquid, et officia, quis,
@@ -30,30 +30,46 @@ function Footer() {
               <div className='nav-links-container'>
                 <ul className='navigation-links'>
                   <li className='navigation-link'>
-                    <Link to='/' className = 'clickable-link'>Home</Link>
+                    <Link to='/' className='clickable-link'>
+                      Home
+                    </Link>
                   </li>
                   <li className='navigation-link'>
-                    <Link to='/packages' className = 'clickable-link'>Packages</Link>
+                    <Link to='/packages' className='clickable-link'>
+                      Packages
+                    </Link>
                   </li>
                   <li className='navigation-link'>
-                    <Link to='#services' className = 'clickable-link'>Services</Link>
+                    <Link to='#services' className='clickable-link'>
+                      Services
+                    </Link>
                   </li>
                   <li className='navigation-link'>
-                    <Link to='/about' className = 'clickable-link'>About</Link>
+                    <Link to='/about' className='clickable-link'>
+                      About
+                    </Link>
                   </li>
                 </ul>
                 <ul className='navigation-links right-navigation-links'>
                   <li className='navigation-link'>
-                    <Link to='/about' className = 'clickable-link'>About Us</Link>
+                    <Link to='/about' className='clickable-link'>
+                      About Us
+                    </Link>
                   </li>
                   <li className='navigation-link'>
-                    <Link to='/' className = 'clickable-link'>Privacy Policy</Link>
+                    <Link to='/' className='clickable-link'>
+                      Privacy Policy
+                    </Link>
                   </li>
                   <li className='navigation-link'>
-                    <Link to='/contact' className = 'clickable-link'>Contact Us</Link>
+                    <Link to='/contact' className='clickable-link'>
+                      Contact Us
+                    </Link>
                   </li>
                   <li className='navigation-link'>
-                    <Link to='/' className = 'clickable-link'>Discount</Link>
+                    <Link to='/' className='clickable-link'>
+                      Discount
+                    </Link>
                   </li>
                 </ul>
               </div>

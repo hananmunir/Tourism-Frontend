@@ -28,7 +28,7 @@ function CustomNavbar({ transparent }) {
     <>
       <Navbar className=' custom-navbar' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand href='/'>TravelMe</Navbar.Brand>
+          <Navbar.Brand href='/'>TotheStars</Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>
             <Nav className='ms-auto   me-auto my-2 mt-lg-2' navbarScroll>
